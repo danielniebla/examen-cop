@@ -1,6 +1,12 @@
 # examen-cop
  examen de ingreso a la vacante de desarrollo coppel;
 
+anotaciones:
+Backend - to_do_list
+frontend - to_do_application
+docker-compose va en la carpeta del backend y su .env
+y en el frontend va .env.local
+
 para correr el proyecto primeramente le debo proporcionar los archivos .env y docker-compose.yml para el backend (hay un .env example para las variables).
 
 una vez que los archivos estan bien configurados correra el docker daemon (en mi caso abro docker desktop), ingrsamos a la carpeta del backend cd to_do_list
