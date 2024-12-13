@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +24,7 @@ import com.to_do_list.to_do_list.users.repository.UserRepository;
 import com.to_do_list.to_do_list.users.services.UserService;
 
 import jakarta.transaction.Transactional;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/todos/users")
 public class UserController {
@@ -71,13 +72,19 @@ public class UserController {
     }
     
     // Crear nuevo usuario
-    @PostMapping
-    public ResponseEntity<String> createUser(@RequestBody Users user) {
+    @PostMapping  
+    public ResponseEntity<UsersDTO> createUser(@RequestBody Users user) {
         try {
-            UserService.createUser(user);
-            return ResponseEntity.ok("Usuario creado exitosamente.");
+            // Crear usuario
+            Users createdUser = UserService.createUser(user);
+
+            // Convertir el nuevo usuario a un DTO
+            UsersDTO userDTO = UserService.convertToDTO(createdUser);
+
+            // Retornar el DTO con id y name
+            return ResponseEntity.ok(userDTO);
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body(null);  // Si hay error, retornamos un 400 con null
         }
     }
     // Eliminar un usuario y sus TODOs relacionados

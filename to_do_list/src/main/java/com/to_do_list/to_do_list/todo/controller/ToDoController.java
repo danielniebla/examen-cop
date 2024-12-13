@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ import com.to_do_list.to_do_list.todo.models.ToDoDTO;
 import com.to_do_list.to_do_list.todo.repository.ToDoRepository;
 import com.to_do_list.to_do_list.users.models.Users;
 import com.to_do_list.to_do_list.users.repository.UserRepository;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/todos")
 public class ToDoController {
