@@ -88,7 +88,7 @@ const ToDos = () => {
       </h2>
       <form
             onSubmit={(event) => handleAdd(event)}
-            className="grid grid-cols-3 my-2 w-full bg-primaryLight-dark dark:bg-primary-dark rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-primary-dark dark:border-primaryLight-light p-4"
+            className="grid gap-1 grid-cols-3 my-2 w-full bg-primaryLight-dark dark:bg-primary-dark rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-primary-dark dark:border-primaryLight-light p-4"
           >
              <Input
               placeholder="Título"
@@ -115,7 +115,7 @@ const ToDos = () => {
           <form
             key={todo.id}
             onSubmit={(event) => handleSave(event, todo.id)}
-            className="grid grid-cols-3 my-2 w-full bg-primaryLight-dark dark:bg-primary-dark rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-primary-dark dark:border-primaryLight-light p-4"
+            className="grid gap-1 grid-cols-3 my-2 w-full bg-primaryLight-dark dark:bg-primary-dark rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-primary-dark dark:border-primaryLight-light p-4"
           >
             <Input
               placeholder="Título"
@@ -135,7 +135,7 @@ const ToDos = () => {
               value={todo.description}
               multiline={true}
             />
-              <div className="flex justify-around flex-wrap my-auto">
+              <div className="flex justify-around flex-wrap gap-1 my-auto">
                 <label htmlFor={`completed-${todo.id}`} className="flex m-auto justify-around">
                   <input
                     type="checkbox"

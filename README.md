@@ -5,23 +5,24 @@ anotaciones:
 debe tener instalado maven, npm y docker
 Backend - to_do_list
 frontend - to_do_application
-en la carpeta del backend va el .env
-y en el frontend va .env.local
+en la carpeta del backend debe estar el archivo .env y el docker-compose.yml
+y en el frontend debe estar el archivo .env.local
 
-para correr el proyecto primeramente le debo proporcionar los archivos .env para el backend (hay un .env example para las variables).
 
-una vez que los archivos estan bien configurados correra el docker daemon (en mi caso abro docker desktop), ingrsamos a la carpeta del backend "cd to_do_list"
+1. abrir una terminal
 
-para despues crear el contenedor de la base de datos "docker-compose up -d"
+2. entrar a la carpeta del backend con el comando:  cd to_do_list
 
-e instalamos las dependencias "mvn install -DskipTests=true"
+3. correr docker daemon (en mi caso abrir docker desktop)
 
-posterior a eso corremos el proyecto "mvn install -DskipTests=true"
+4. para crear el contenedor de la base de datos, ejecutamos el archivo docker-compose con el comando: docker-compose up -d
 
-despues de terminar con el backend pasaremos al frontend, aqui solo necesitamos el .env que le proporcionare por correo.
+5. en la consola instalar las dependencias de maven con el comando: mvn install -DskipTests=true
 
-y una vez configurado el .env abriremos otra terminal y entraremos a la carpeta del frontend "cd to_do_application"
+6. continuamos en la consola y dejaremos corriendo el proyecto con el siguiente comando: mvn spring-boot:run
 
-una vez dentro instalamos dependencias "npm install"
+7. abrimos una segunda consola sin detener la anterior e ingresamos a la ruta del proyecto frontend la cual es la siguiente: cd to_do_application
 
-y corremos el proyecto "npm run dev" 
+8. instalamos las dependencias del proyecto react con el comando: npm install
+
+9. por ultimo corremos el proyecto con el comando:  npm run dev
