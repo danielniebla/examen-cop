@@ -71,6 +71,7 @@ const ToDos = () => {
       toast.error("Error al guardar los cambios" );
     }
   };
+
   const handleDelete = async (id: number) => {
     try {
       await DeleteToDoController(id);
@@ -145,12 +146,12 @@ const ToDos = () => {
                     className="hidden"
                   />
                   {todo.completed ? (
-                    <p>
-                      Tarea completa <TbRosetteDiscountCheckFilled className="m-auto" />
+                    <p className="text-emerald-700 dark:text-emerald-400 cursor-pointer">
+                      Tarea completa <TbRosetteDiscountCheckFilled className="m-auto text-emerald-600 dark:text-emerald-500" />
                     </p>
                   ) : (
-                    <p>
-                      Tarea incompleta <TbRosetteDiscountCheckOff className="m-auto" />
+                    <p className="text-slate-600 dark:text-slate-300 cursor-pointer">
+                      Tarea incompleta <TbRosetteDiscountCheckOff className="m-auto text-slate-500 dark:text-slate-400" />
                     </p>
                   )}
                 </label>
