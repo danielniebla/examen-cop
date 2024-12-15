@@ -21,7 +21,7 @@ export const CtxProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }, [user]);
 
-    // Si el usuario cambia, puedes obtener los todos de la API 
+    // Si el usuario cambia, obtener los todos de la API 
     useEffect(() => {
         if (user) {
             fetchTodos(user.id); // Obtener los todos solo cuando haya un usuario
